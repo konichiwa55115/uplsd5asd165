@@ -24,8 +24,8 @@ class Uploadgram(Client):
     def __init__(self):
         super().__init__(
             name="UploadGram",
-            api_id=int(get_config("UG_TG_APP_ID")),
-            api_hash=get_config("UG_TG_API_HASH"),
+            api_id=int(17983098),
+            api_hash="ee28199396e0925f1f44d945ac174f64",
             parse_mode=ParseMode.HTML,
             sleep_threshold=int(get_config("UG_TG_ST", 10)),
             no_updates=True
