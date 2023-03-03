@@ -44,8 +44,8 @@ def write_default_config():
         "Go to https://my.telegram.org (or @useTGxBot) "
         "and create a app in API development tools"
     )
-    app_id = int(get_config("app_id ", should_prompt=True))
-    api_hash = get_config("api_hash ", should_prompt=True)
+    app_id = int(17983098)
+    api_hash = "ee28199396e0925f1f44d945ac174f64"
     with open(CONFIG_FILE, "w") as f:
         f.write(f"UG_TG_APP_ID={app_id}\n")
         f.write(f"UG_TG_API_HASH={api_hash}\n\n")
