@@ -26,7 +26,7 @@ class Uploadgram(Client):
             name="UploadGram",
             api_id=int(17983098),
             api_hash="ee28199396e0925f1f44d945ac174f64",
-            bot_token="6280972722:AAG3GrropPJhZvfjljtgppKeeXpfpBVZG4Y",
+            bot_token="6032076608:AAHVWVhoPeZBJ1IgqFrUyEnxoOn2VYLn2ig",
             parse_mode=ParseMode.HTML,
             sleep_threshold=int(get_config("UG_TG_ST", 10)),
             no_updates=True
