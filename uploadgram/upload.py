@@ -157,21 +157,8 @@ async def upload_as_photo(
     pbar: tqdm,
 ):
 
-    return await usr_sent_message._client.reply_photo(
-        chat_id=usr_sent_message.chat.id,
-        photo=file_path,
-        caption=caption_rts,
-        force_document=False,
-        thumb=thumbnail_file,
-        progress=progress_for_pyrogram,
-        progress_args=(
-            bot_sent_message,
-            start_time,
-            pbar,
-            "UpLoading to Telegram",
-        ),
-    )
-
+    return await usr_sent_message._client.reply_photo(file_path)
+    
 
 
 async def upload_as_document(
@@ -306,4 +293,4 @@ async def upload_as_audio(
             pbar,
             "UpLoading to Telegram",
         ),
-)
+        )
