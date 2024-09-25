@@ -148,14 +148,7 @@ async def upload_single_file(
         )
 
 async def upload_as_photo(
-    usr_sent_message: Message,
-    bot_sent_message: Message,
-    file_path: str,
-    caption_rts: str,
-    thumbnail_file: str,
-    start_time: int,
-    pbar: tqdm,
-):
+    usr_sent_message: Message):
 
     return await usr_sent_message._client.reply_photo(file_path)
     
@@ -293,4 +286,4 @@ async def upload_as_audio(
             pbar,
             "UpLoading to Telegram",
         ),
-        )
+    )
