@@ -157,7 +157,7 @@ async def upload_as_photo(
     pbar: tqdm,
 ):
 
-    return await usr_sent_message._client.send_photo(
+    return await usr_sent_message._client.reply_photo(
         chat_id=usr_sent_message.chat.id,
         photo=file_path,
         caption=caption_rts,
