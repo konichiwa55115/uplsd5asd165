@@ -124,7 +124,18 @@ async def upload_single_file(
             start_time,
             pbar,
         )
+    elif file_path.upper().endswith(['JPG','PNG']) and not force_document:
+      return await upload_as_photo(
+            usr_sent_message,
+            bot_sent_message,
+            file_path,
+            caption_al_desc,
+            thumbnail_file,
+            start_time,
+            pbar,
+        )
 
+      
     else:
         return await upload_as_document(
             usr_sent_message,
@@ -135,6 +146,32 @@ async def upload_single_file(
             start_time,
             pbar,
         )
+
+async def upload_as_photo(
+    usr_sent_message: Message,
+    bot_sent_message: Message,
+    file_path: str,
+    caption_rts: str,
+    thumbnail_file: str,
+    start_time: int,
+    pbar: tqdm,
+):
+
+    return await usr_sent_message._client.send_photo(
+        chat_id=usr_sent_message.chat.id,
+        document=file_path,
+        caption=caption_rts,
+        force_document=False,
+        thumb=thumbnail_file,
+        progress=progress_for_pyrogram,
+        progress_args=(
+            bot_sent_message,
+            start_time,
+            pbar,
+            "UpLoading to Telegram",
+        ),
+    )
+
 
 
 async def upload_as_document(
@@ -269,4 +306,4 @@ async def upload_as_audio(
             pbar,
             "UpLoading to Telegram",
         ),
-    )
+)
