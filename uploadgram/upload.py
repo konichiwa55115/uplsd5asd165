@@ -127,14 +127,7 @@ async def upload_single_file(
     elif file_path.upper().endswith(['JPG','PNG']) and not force_document:
       return await upload_as_photo(
             usr_sent_message,
-            bot_sent_message,
-            file_path,
-            caption_al_desc,
-            thumbnail_file,
-            start_time,
-            pbar,
-        )
-
+            file_path,)
       
     else:
         return await upload_as_document(
@@ -148,9 +141,10 @@ async def upload_single_file(
         )
 
 async def upload_as_photo(
-    usr_sent_message: Message):
+    usr_sent_message: Message,
+    file_path: str,):
 
-    return await usr_sent_message._client.reply_photo(file_path)
+    return await usr_sent_message._client.reply_photo(file_path,)
     
 
 
@@ -286,4 +280,4 @@ async def upload_as_audio(
             pbar,
             "UpLoading to Telegram",
         ),
-    )
+)
