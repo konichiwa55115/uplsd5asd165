@@ -159,7 +159,7 @@ async def upload_as_photo(
 
     return await usr_sent_message._client.send_photo(
         chat_id=usr_sent_message.chat.id,
-        document=file_path,
+        photo=file_path,
         caption=caption_rts,
         force_document=False,
         thumb=thumbnail_file,
